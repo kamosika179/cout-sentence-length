@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>文字数をカウントするよ</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="textbox">
+        <textarea v-model="content" @input="count_sentence" cols="50" rows="25"></textarea>
+
+        </br>
+        文字数 </br>
+        {{ length }}
+        </div>
+    </body>
+
+    <script>
+        vm = new Vue({
+            el: "#textbox",
+            data: {
+                content: "",
+                length: 0
+            },
+            methods: {
+                count_sentence: function(){
+                    this.length = this.content.length;
+
+                }
+            }
+        });
+    </script>
+</html>
